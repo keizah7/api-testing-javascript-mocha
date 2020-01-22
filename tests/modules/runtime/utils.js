@@ -41,4 +41,10 @@
     return date.getTime();
   };
 
+  exports.getCountryCode = function s() {
+    var array = ['LT', 'RU', 'ES', 'CO'];
+
+    return array[Math.floor(Math.random()*array.length)];
+  }
+
 })();
