@@ -2,7 +2,7 @@
   "name": "apiintegrationtestjs",
   "version": "0.0.1",
   "description": "REST API Integration Tests using Mocha",
-  "author": "Liudas Jankauskas",
+  "author": "Artūras M",
   "scripts": {
     "test": "mocha tests/test"
   },

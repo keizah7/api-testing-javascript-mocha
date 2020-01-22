@@ -41,6 +41,11 @@
     return date.getTime();
   };
 
+  /**
+   * Returns random country code from array
+   *
+   * @returns {string}
+   */
   exports.getCountryCode = function s() {
     var array = ['LT', 'RU', 'ES', 'CO'];
 
