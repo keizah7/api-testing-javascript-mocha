@@ -36,6 +36,48 @@ describe('INTEGRATION API TESTS', function () {
             expect(response.body).to.have.property('first_name');
             expect(response.body.first_name).to.equal(data.user.first_name);
         });
+
+        /** validation */
+        it('Should be not able to update user profile when firstname is invalid', async function () {
+            data.user.first_name = 'a1';
+
+            let response = await user.putRequest();
+
+            expect(response.statusCode).to.equal(400);
+            expect(response.body.code).to.equal('INVALID_FIRST_NAME');
+        });
+
+        it('Should be not able to update user profile when lastname is invalid', async function () {
+            data.user.first_name = 'Arturas';
+            data.user.last_name = 'a1';
+
+            let response = await user.putRequest();
+
+            expect(response.statusCode).to.equal(400);
+            expect(response.body.code).to.equal('INVALID_LAST_NAME');
+        });
+
+        it('Should be not able to update user profile when country code is invalid', async function () {
+            data.user.last_name = 'Qwerty';
+            data.user.country_code_iso = 'zz';
+
+            let response = await user.putRequest();
+
+            expect(response.statusCode).to.equal(400);
+            expect(response.body.code).to.equal('VALIDATION_ERROR');
+            expect(response.body.message).to.equal("not valid country code ISO");
+        });
+
+        it('Should be not able to update user profile when language code is invalid', async function () {
+            data.user.country_code_iso = 'LT';
+            data.user.language_code = 'zz';
+
+            let response = await user.putRequest();
+
+            expect(response.statusCode).to.equal(400);
+            expect(response.body.code).to.equal('VALIDATION_ERROR');
+            expect(response.body.message).to.equal("invalid language code");
+        });
         //
         // it('Should be able to call post request', async function () {
         //   // Given
