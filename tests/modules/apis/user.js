@@ -12,10 +12,9 @@ chai.use(chaiHttp);
     /**
      * get request example.
      */
-    exports.getRequest = async function (query) {
-        query = query;
+    exports.getRequest = async function () {
         return await chai.request(env.urlApi)
-            .get(`/${query}`)
+            .get('/mth/v1/users/profile')
             .set('content-type', 'application/json')
             .set('Authorization', data.global.Authorization)
             .send();
@@ -24,9 +23,9 @@ chai.use(chaiHttp);
     /**
      * put request example.
      */
-    exports.putRequest = async function (query) {
+    exports.putRequest = async function () {
         return await chai.request(env.urlApi)
-            .put(`/${query}`)
+            .put('/mth/v1/users/profile')
             .set('Content-Type', 'application/json')
             .set('Authorization', data.global.Authorization)
             .send(

@@ -20,9 +20,9 @@ describe('INTEGRATION API TESTS', function () {
     after("Data cleanup.", function () {
     });
 
-    describe('Usert tests', function () {
+    describe('User tests', function () {
         it('Should be able to update user profile', async function () {
-            let response = await user.putRequest('mth/v1/users/profile');
+            let response = await user.putRequest();
 
             expect(response.statusCode).to.equal(200);
             expect(response.body).to.have.property('first_name');
@@ -30,7 +30,7 @@ describe('INTEGRATION API TESTS', function () {
         });
 
         it('Should be able to get user profile', async function () {
-            let response = await user.getRequest('mth/v1/users/profile');
+            let response = await user.getRequest();
 
             expect(response.statusCode).to.equal(200);
             expect(response.body).to.have.property('first_name');

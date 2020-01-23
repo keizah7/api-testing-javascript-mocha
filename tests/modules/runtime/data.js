@@ -4,7 +4,7 @@ let utils = require('./utils');
   // define global data and default values - subject to change during runtime
   let data = {
     global: {
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1ODIzOTA1OTIsImlhdCI6MTU3OTcxMjE5MiwibmJmIjoxNTc5NzEyMTkyLCJpZCI6NjQ3OSwiY2lkIjo2NjM0NCwiZGV2X2lkIjoic3RyaW5nIn0.hpCM40Ila6Jj4HLqw5oFiTWQnjqva44dMV2y77xv8U8'
+      Authorization: ''
     },
     pm: {
       id: null,
