@@ -10,6 +10,8 @@ describe('Deals API TESTS', function () {
     let data = settings.runtimeData;
     let options = settings.options;
     let expect = settings.expect;
+    let postedPostId;
+
     this.timeout(options.apiCallTimeout);
 
     before('Use config from server', function () {
@@ -20,13 +22,32 @@ describe('Deals API TESTS', function () {
     after("Data cleanup.", function () {
     });
 
-    describe('User tests', function () {
+    describe('Deals tests', function () {
         it('Should be able to get deals', async function () {
             let response = await deal.getUserDeals();
 
             expect(response.statusCode).to.equal(200);
-            // expect(response.body).to.have.property('first_name');
-            // expect(response.body.first_name).to.equal(data.user.first_name);
+        });
+
+        it('Should be able to post deal', async function () {
+            let response = await deal.postUserDeal();
+            postedPostId = response.body.id;
+
+            expect(response.statusCode).to.equal(201);
+            expect(response.body).to.have.property('title');
+            expect(response.body.title).to.equal(data.deal.title);
+        });
+
+        it('Should be able to cancel deal', async function () {
+            let response = await deal.cancelUserDeal(postedPostId);
+
+            expect(response.statusCode).to.equal(204);
+        });
+
+        it('Should be able to get user private key', async function () {
+            let response = await deal.getUserWallet();
+
+            expect(response.statusCode).to.equal(200);
         });
     });
 });

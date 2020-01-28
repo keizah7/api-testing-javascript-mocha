@@ -4,7 +4,8 @@ let utils = require('./utils');
     // define global data and default values - subject to change during runtime
     let data = {
         global: {
-            Authorization: ''
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1ODIzOTA1OTIsImlhdCI6MTU3OTcxMjE5MiwibmJmIjoxNTc5NzEyMTkyLCJpZCI6NjQ3OSwiY2lkIjo2NjM0NCwiZGV2X2lkIjoic3RyaW5nIn0.hpCM40Ila6Jj4HLqw5oFiTWQnjqva44dMV2y77xv8U8',
+            mth: 'bW9uZXRoYQ==',
         },
         pm: {
             id: null,
@@ -26,21 +27,21 @@ let utils = require('./utils');
             last_name: utils.randomString(10, 'ĄČĘĖĮŠŲŪŽąčęėįšųūžzxcvbnmlkjhgfdsaqwertyuiop'),
         },
         deal: {
-            "condition": "used",
-            "description": "string",
-            "expired_at": "{{expiredAt}}",
-            "from": "2019-12-02T17:42:42Z",
-            "is_defected": true,
-            "note_to_seller": "string",
-            "order_id": 0,
-            "to": "2019-12-02T17:42:42Z",
-            "warranty_until": "2020-12-05T17:42:42Z",
-            "currency": "EUR",
-            "title": "string",
-            "total": 0.01,
-            "buyer_id": "9e600906-c972-4ff8-b7d8-780d1a344573",
-            "deal_type": "goods",
-            "seller_id": "3e4e9c59-0b7c-45d2-8c50-edb2291303bc"
+            condition: "used",
+            description: "string",
+            expired_at: "2020-03-24T17:42:42Z",
+            from: "2019-12-02T17:42:42Z",
+            is_defected: true,
+            note_to_seller: "string",
+            order_id: 0,
+            to: "2019-12-02T17:42:42Z",
+            warranty_until: "2020-12-05T17:42:42Z",
+            currency: "EUR",
+            title: "string",
+            total: 0.01,
+            buyer_id: "9e600906-c972-4ff8-b7d8-780d1a344573",
+            deal_type: "goods",
+            seller_id: "3e4e9c59-0b7c-45d2-8c50-edb2291303bc"
         }
     };
     exports.getDefaultEmptyValue = function () {
